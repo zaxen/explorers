@@ -8,9 +8,6 @@ import java.util.List;
 
 import org.junit.Test;
 
-import explorers.Simulation;
-import explorers.SimulationResult;
-
 public class SimulationIT {
 
 	@Test
