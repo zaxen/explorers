@@ -1,7 +1,9 @@
 package explorers.exception;
 
-
-public class ExplorerException extends RuntimeException {
+/**
+ * Base class for custom Explorer Exceptions
+ */
+public abstract class ExplorerException extends RuntimeException {
 
 	public ExplorerException() {
 		super();

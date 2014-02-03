@@ -11,20 +11,20 @@ import explorers.exception.InvalidCommandCharacterException;
 public enum Command {
 	/** The rotate left command */
 	ROTATE_LEFT('L') {
-		void run(Explorer location) {
-			location.direction = location.direction.rotateLeft();
+		void run(Explorer explorer) {
+			explorer.direction = explorer.direction.rotateLeft();
 		}
 	},
 	/** The rotate right command */
 	ROTATE_RIGHT('R') {
-		void run(Explorer location) {
-			location.direction = location.direction.rotateRight();
+		void run(Explorer explorer) {
+			explorer.direction = explorer.direction.rotateRight();
 		}
 	},
 	/** The move command */
 	MOVE('M') {
-		void run(Explorer location) {
-			location.move();
+		void run(Explorer explorer) {
+			explorer.move();
 		}
 	};
 	
@@ -69,9 +69,18 @@ public enum Command {
 		this.command = command;
 	}
 
+	/**
+	 * Gets the single character representation of this Command
+	 * @return The single character representation
+	 */
 	public char getCommandCharacter() {
 		return command;
 	}
 	
-	abstract void run(Explorer location);
+	/**
+	 * Runs this command on the given explorer.
+	 *
+	 * @param explorer The Explorer to run this command on
+	 */
+	abstract void run(Explorer explorer);
 }
